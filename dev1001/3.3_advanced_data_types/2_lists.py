@@ -14,7 +14,6 @@ empty_list = []
 
 print(f"Shopping List: {shopping_list}")
 
-"""
 # Accessing elements (Zero-indexed) and Slicing
 print(f"First item: {shopping_list[0]}")
 print(f"Last item: {shopping_list[-1]}") # Negative indexing
@@ -25,6 +24,7 @@ print(f"Number of scores: {len(scores)}")
 print(f"'milk' in shopping list? {'milk' in shopping_list}") # Membership test
 
 
+"""
 # --- MODIFY ---
 
 print(f"Original shopping list: {shopping_list}")
