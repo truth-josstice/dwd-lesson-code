@@ -1,5 +1,5 @@
 # --- USE: match-case Statement ---
-http_status_code = 404 # Try 200, 500, 999
+http_status_code = 98347598746 # Try 200, 500, 999
 status_meaning = ""
 
 match http_status_code:
