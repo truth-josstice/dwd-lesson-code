@@ -16,7 +16,7 @@
 ---
 
 ## Loops
-
+'''
 *   **Tasks:**
     1.  **`while` Loop Temperature Check:**
         *   Imagine a sensor reading. Start with `current_temp = 18`.
@@ -36,3 +36,4 @@
             *   "Invitation 1 for Alice"
             *   "Invitation 2 for Bob"
             *   ...etc.
+'''
