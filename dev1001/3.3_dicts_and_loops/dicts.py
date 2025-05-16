@@ -57,19 +57,30 @@ inventory["usb_c_hub"] -= 3
 print(f"{inventory}")
 
 # Create a new dictionary with prices of at LEAST the laptop_stand, usb_c_hub, ergonomic_keyboard
+# product_prices = {
+#     "laptop_stand": 25,
+#     "usb_c_hub": 30,
+#     "ergonomic_keyboard": 75
+# }
+
 product_prices = {
     "laptop_stand": 25,
     "usb_c_hub": 30,
-    "ergonomic_keyboard": 75
+    "ergonomic_keyboard": 75,
+    "webcam": 50
 }
 
 # Print the price of laptop_stand
-print(f"Price of the Laptop Stand: {product_prices["laptop_stand"]}")
+# print(f"Price of the Laptop Stand: {product_prices["laptop_stand"]}")
+print(f"Price for the Laptop Stand: ${product_prices["laptop_stand"]}")
 
 # Use .get() to check for webcam price and print "Price not available" if it's not found
+# price_to_check_safe = "webcam"
+# user_price_check = product_prices.get(price_to_check_safe, "Price not available")
+# print(f"Price of {price_to_check_safe}: {user_price_check}")
 price_to_check_safe = "webcam"
-user_price_check = product_prices.get(price_to_check_safe, "Price not available")
-print(f"Price of {price_to_check_safe}: {user_price_check}")
+user_price_check = product_prices.get(price_to_check_safe, 'Price not available.')
+print(f"Price of {price_to_check_safe}: ${user_price_check}")
 
 # Check if quantity of laptop_stand is below 15, if so print low stock alert for laptop stand
 item_to_check_safe = "laptop_stand"
