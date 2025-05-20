@@ -19,3 +19,6 @@ products = [
     {'name': 'Monitor', 'price': 300.00, 'stock': 5, 'category': 'Electronics'}
 ]
 
+in_stock = map(lambda item: item.get('name'), filter(lambda x: x['stock'] > 0, products))
+print(f'Items currently in stock: {list(in_stock)}')
+

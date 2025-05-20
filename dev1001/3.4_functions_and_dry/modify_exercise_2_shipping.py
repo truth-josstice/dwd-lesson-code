@@ -2,7 +2,7 @@
 
 # Inputs that will be passed to the function (examples)
 package1_weight_kg = 2.5
-package1_zone = "metro"
+package1_zone = "outerspace"
 
 package2_weight_kg = 5.0
 package2_zone = "remote"
@@ -22,24 +22,36 @@ def calculate_shipping_cost(weight_kg, destination_zone="metro", base_rate_per_k
     - 'regional': $5
     - 'remote': $10
     """
-    shipping_cost = 0.0
-    surcharge = 0.0
+    # shipping_cost = 0.0
+    metro_surcharge = 2.5
+    regional_surcharge = 5.0
+    remote_surcharge = 10.0
 
-    # TODO 1: Calculate the base cost (weight_kg * base_rate_per_kg)
+    shipping_cost = weight_kg * base_rate_per_kg
     
-    # TODO 2: Determine the surcharge based on destination_zone.
-    # Use if-elif-else or match-case.
-    # 'metro': surcharge = 0.0
-    # 'regional': surcharge = 5.0
-    # 'remote': surcharge = 10.0
-    # (Optional: handle an unknown zone, e.g., print a message and use metro surcharge)
+    # if destination_zone == 'remote':
+    #     shipping_cost += remote_surcharge
+    # elif destination_zone == 'regional':
+    #     shipping_cost += regional_surcharge           #ifelifelse version
+    # elif destination_zone == 'metro':
+    #     shipping_cost += metro_surcharge
+    # else:
+    #     print(f"Your zone is not recognised, applying the standard surcharge.")
+    #     shipping_cost += metro_surcharge
 
-    # TODO 3: Calculate the total shipping_cost (base_cost + surcharge)
+    match (destination_zone):
+        case 'metro':
+            shipping_cost += metro_surcharge
+        case 'regional':
+            shipping_cost += regional_surcharge
+        case 'remote':
+            shipping_cost += remote_surcharge
+        case _: 
+            print(f"Your zone is not recognised, applying the standard surcharge.")
+            shipping_cost += metro_surcharge
 
-    # TODO 4: Return the total shipping_cost
+    return shipping_cost
 
-    # Remove the 'pass' statement below when you start coding
-    pass
 
 # --- Main part of the script (provided) ---
 # Call 1: Positional arguments

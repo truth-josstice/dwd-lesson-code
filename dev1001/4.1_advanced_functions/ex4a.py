@@ -9,8 +9,11 @@
 # (e.g., to two decimal places, but the core is the map).
 
 prices = [10.99, 5.49, 20.00]
+tax = 1.2
+total_prices = map(lambda price: price * tax, prices)
+tp_formatted = ['$' + '%.2f' % elem for elem in total_prices ]
 
-
+print(f'Total prices: {tp_formatted}')
 
 # Exercise 2
 # ----------
@@ -24,4 +27,22 @@ prices = [10.99, 5.49, 20.00]
 
 scores = [85, 92, 78, 60, 42, 95, 70, 53]
 
+def score_to_grade(score):
+    if score in range(0, 100):
+        if score >= 90:
+            return 'HD'
+        elif score >=80:
+            return 'D'
+        elif score >= 70:
+            return 'C'
+        elif score >= 50:
+            return 'P'
+        else:
+            return 'F'
+    else:
+        return 'Invalid score value'
+    
+grades = map(score_to_grade, scores)
 
+print(scores)
+print(f'{list(grades)}')

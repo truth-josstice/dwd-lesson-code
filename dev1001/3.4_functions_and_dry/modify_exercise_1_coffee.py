@@ -13,14 +13,25 @@ def calculate_bulk_coffee_order_total():
     a fixed_service_fee is added.
     This function uses the global variables defined above.
     """
-    total_cost = 0.0
+    # total_cost = 0.0
+    
     # TODO 1: Calculate the base cost of all coffees (price_per_coffee * number_of_coffees)
     # TODO 2: Check if number_of_coffees is greater than service_fee_threshold
     # TODO 3: If it is, add the fixed_service_fee to the total_cost
     # TODO 4: Return the final total_cost
-
     # Remove the 'pass' statement below when you start coding
-    pass
+
+    # coffee_cost = price_per_coffee * number_of_coffees
+    # total_cost += coffee_cost 
+    # if number_of_coffees > service_fee_threshold:  # five lines of code, not bad, but could be done in four as below
+    #     total_cost += fixed_service_fee
+    # return total_cost
+    
+    total_cost = price_per_coffee * number_of_coffees
+    if number_of_coffees > service_fee_threshold:
+        total_cost += fixed_service_fee
+    return total_cost
+    
 
 # --- Main part of the script (provided) ---
 order_total = calculate_bulk_coffee_order_total()

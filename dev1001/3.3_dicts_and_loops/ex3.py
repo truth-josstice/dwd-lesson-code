@@ -1,6 +1,7 @@
 shopping_list = []
 
 while True:
+    print('A python shopping list!' + '\n' + '-' * 30)
     print("\n")
     print("1. Add item")
     print("2. View list")

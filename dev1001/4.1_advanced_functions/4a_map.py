@@ -21,5 +21,6 @@ print(numbers)
 # MODIFY
 # Given a list of names get a list of greetings eg. ['Hello Alice', 'Hello Bob', ...]
 names = ['alice', 'bob', 'charlie']
-greetings = list(map(lambda name: '''your code here'''))
+greetings = list(map(lambda name: f'Hello {name.capitalize()}', names))
+
 print(greetings)
