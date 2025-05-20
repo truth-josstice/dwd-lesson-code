@@ -17,3 +17,4 @@ print(f"The area of a circle with radius {radius} is: {area:.2f}")
 from math import pow, factorial
 print(f"2 to the power of 3 is: {pow(2, 3)}")
 print(f"Factorial of 5 is: {factorial(5)}")
+

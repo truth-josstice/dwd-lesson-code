@@ -85,13 +85,13 @@ def generate_order_receipt(customer_name, order_items, is_loyalty_member=False):
         else:
             f_str = str.title(f'{i[1]} x {i[0]}: ${item:.2f}')
             receipt_data.append(f_str)
-    apply_discount_and_gst(current_subtotal, is_loyalty_member)
-    receipt_str = str.title(f'-' * 9 + 'Your Receipt' + '-' * 9 + '\n' f'Customer Name: {customer_name}\n' + '\n'.join(receipt_data) + '\n' + '-' * 30 + '\n' + f'Subtotal: ${current_subtotal}' + '\n')
+    disc_tax = apply_discount_and_gst(current_subtotal, is_loyalty_member)
+    if is_loyalty_member==True:
+        receipt_str = str.title(f'-' * 9 + 'Your Receipt' + '-' * 9 + '\n' f'Customer Name: {customer_name}\n' + '\n'.join(receipt_data) + '\n' + '-' * 30 + '\n' + f'Subtotal: ${current_subtotal}' + '\n' + f'Loyalty Discount (10%): -${(current_subtotal)*0.1:.2f}' + '\n' + f'subtotal after discount: ${disc_tax[0]:.2f}' + '\n' + f'GST (10%): ${disc_tax[1]:.2f}' + '\n' + '-' * 30 + '\n' + (f'GRAND TOTAL: ${disc_tax[2]:.2f}') + '\n' + '=' * 30 + '\n')
+    else:
+        receipt_str = str.title(f'-' * 9 + 'Your Receipt' + '-' * 9 + '\n' f'Customer Name: {customer_name}\n' + '\n'.join(receipt_data) + '\n' + '-' * 30 + '\n' + f'Subtotal: ${current_subtotal:.2f}' + '\n' + f'GST (10%): ${disc_tax[1]:.2f}' + '\n' + '-' * 30 + '\n' + (f'GRAND TOTAL: ${disc_tax[2]:.2f}') + '\n' + '=' * 30 + '\n')
     print(receipt_str) 
     
-
-
-
 order_1 = [
     ("coffee", 2, {"size": "small", "milk": "soy", "extra_shot": True}),
     ("coffee", 1, {"size": "medium", "milk": "soy", "extra_shot": False}),
@@ -109,8 +109,10 @@ order_4 = [
     ("tea", 5, {"type": "herbal", "milk": "almond"})
 ]
 
-generate_order_receipt('Alex', order_1, is_loyalty_member=False)
+generate_order_receipt('alex', order_1, is_loyalty_member=False)
 generate_order_receipt('jim', order_2, is_loyalty_member=True)
+generate_order_receipt('pete', order_3, True)
+generate_order_receipt('ruddeger', order_4)
 
 
 # apply_discount_and_gst(calculate_item_price('coffee', 5, size='small', milk='soy', extra_shot=True), True, 0.1, 0.1)

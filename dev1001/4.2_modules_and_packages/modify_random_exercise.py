@@ -9,26 +9,28 @@ Tasks:
 5. Create a list of three friend's names. Use `random.sample()` to pick 2 unique names from the list
    without replacement and print the selection. (Hint: random.sample(population, k))
 """
-import random
+
 
 # --- Your code for Task 1 (import) is implicitly here ---
 
+import random
+
 # Task 2: Create a list of colors
-# colors = [...]
-# print(f"My colors: {colors}")
+colors = ['blue', 'red', 'green', 'yellow', 'hot pink', 'baby pink', 'pastel pink', 'fuschia', 'magenta']
+print(f"My colors: {colors}")
 
 # Task 3: Pick a random color
-# chosen_color = ...
-# print(f"Randomly chosen color: {chosen_color}")
+chosen_color = random.choice(colors)
+print(f"Randomly chosen color: {chosen_color}")
 
 # Task 4: Simulate rolling a D20
-# d20_roll = ...
-# print(f"D20 roll: {d20_roll}")
+d20_roll = random.randint(1, 20)
+print(f"D20 roll: {d20_roll}")
 
 # Task 5: Pick 2 unique names using random.sample()
-# friends = [...]
-# sampled_friends = ...
-# print(f"Sampled friends: {sampled_friends}")
+friends = ['Ben', 'Damielou', 'Jen', 'Jaz', 'Suz', 'Tam', 'Josh', 'Connor']
+sampled_friends = random.sample(friends, counts=[4,4,4,4,4,4,4,4], k=4)
+print(f"Sampled friends: {sampled_friends}")
 
 print("--- Modify Random Exercise Complete (Placeholder) ---")
 # Expected output (will vary due to randomness):
