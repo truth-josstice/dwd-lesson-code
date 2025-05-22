@@ -1,0 +1,4 @@
+Apples:2.50
+Bananas:1.20
+Milk:3.00
+Bread
