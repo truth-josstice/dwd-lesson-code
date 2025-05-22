@@ -22,3 +22,11 @@ products = [
 in_stock = map(lambda item: item.get('name'), filter(lambda x: x['stock'] > 0, products))
 print(f'Items currently in stock: {list(in_stock)}')
 
+total_price = map(lambda x: (x.get('price')) * (x.get('stock')), filter(lambda x: x['category'] == 'Electronics', products))
+print(f'Total price of electronics category: ${sum(total_price):.2f}')
+
+newlist = map(lambda x: str(f'{x['name']} - ${x['price']:.2f}'), filter(lambda x: x['category'] == 'Apparel', products))
+print(list(newlist))
+
+listcomp = [str(f'{x['name']} - ${x['price']:.2f}') for x in products if x['category'] == 'Apparel']
+print(listcomp)
