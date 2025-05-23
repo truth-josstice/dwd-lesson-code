@@ -42,6 +42,17 @@ class Cat(Animal):
     def purr(self):
         print(f"{self.name} purrs contentedly.")
 
+class LoudDog(Animal):
+    def __init__(self, name, bark_volume):
+        super().__init__(name)
+        self.bark_volume = bark_volume
+    
+    def speak(self):
+        print(f'{self.name} barks {self.bark_volume}ly!!!')
+
+    def fetch(self, item):
+        print(f'You throw a {item} for {self.name}. {self.name} fetches the {item}.')
+
 # --- Let's USE the Animal and Cat classes ---
 print("--- Creating and Using Animal and Cat Objects ---")
 generic_animal = Animal("Creature")
@@ -55,3 +66,10 @@ my_cat.eat()      # Inherited from Animal
 my_cat.speak()    # Overridden in Cat
 my_cat.purr()     # Specific to Cat
 print(f"{my_cat.name} has {my_cat.fur_color} fur.")
+
+print("-" * 10)
+
+my_dog = LoudDog("Othello", "extremely loud")
+my_dog.eat()
+my_dog.speak()
+my_dog.fetch("ball")

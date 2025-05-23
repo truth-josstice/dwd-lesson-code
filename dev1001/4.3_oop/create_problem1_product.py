@@ -1,5 +1,5 @@
 # create_problem1_product.py
-
+ 
 """
 Problem 1: E-commerce Product
 
@@ -46,21 +46,34 @@ Example Usage (you can uncomment and adapt this after defining your class):
 # print(f"Total stock value for {item2.name}: ${total_value_item2:.2f}")
 """
 
-# --- Your Product class definition goes here ---
+
 class Product:
-    # TODO: Implement the __init__ method
-    pass
+    def __init__(self, name, price, quantity_in_stock):
+        self.name = name
+        self.price = price
+        self.quantity = quantity_in_stock
 
-    # TODO: Implement the display_product_info method
-    pass
+    def display_product_info(self):
+        print(f'Product: {self.name}. Price: ${self.price:.2f}. Currently in stock: {self.quantity}')
 
-    # TODO: Implement the update_stock method
-    pass
+    def update_stock(self, new_quantity):
+        self.quantity = new_quantity
+        print(f'Quantity in stock updated to {self.quantity} units.')
 
-    # TODO: Implement the calculate_total_value method
-    pass
+    def calculate_total_value(self):
+        self.total = self.price * self.quantity
 
 
-# --- Test your Product class here ---
-# print("--- Testing Product Class ---")
-# (Create objects and call methods as per instructions)
+item1 = Product('Laptop', 2499.99, 15)
+item2 = Product('Jackhammer', 16299.99, 4)
+
+item1.display_product_info()
+item1.update_stock(11)
+item1.calculate_total_value()
+print(f'Total $ SOH for {item1.name}: ${item1.total:.2f}')
+
+item2.display_product_info()
+item2.update_stock(2)
+item2.calculate_total_value()
+print(f'Total $ SOH for {item2.name}: ${item2.total:.2f}')
+
