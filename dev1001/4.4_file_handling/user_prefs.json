@@ -1,10 +1,11 @@
 {
     "username": "admin",
-    "theme": "dark",
+    "theme": "light",
     "notifications_enabled": true,
     "recent_files": [
         "doc1.txt",
         "report.pdf",
         "newfile.txt"
-    ]
+    ],
+    "font_size": 12
 }

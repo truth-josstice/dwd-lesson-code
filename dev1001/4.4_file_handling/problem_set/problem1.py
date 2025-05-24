@@ -11,31 +11,25 @@ Description:
 FAVORITES_FILE = "favorites.txt"
 
 def write_favorites(my_favorite_things):
-    """
-    Writes each item in the my_favorite_things list to FAVORITES_FILE,
-    one item per line. This will overwrite the file if it already exists.
-    """
-    # TODO 1: Open FAVORITES_FILE in 'write' mode ('w').
-    # Use a 'with' statement.
-    # Inside the 'with' block, loop through the my_favorite_things list.
-    # For each item, write it to the file followed by a newline character ('\n').
+    
+    with open(FAVORITES_FILE, 'w') as f:
+        my_list = []
+        for x in my_favorite_things:
+            my_list.append(x)
+        f.write('\n'.join(my_list))
+    
     
     print(f"Your favorite things have been written to {FAVORITES_FILE}")
 
 
 def read_and_print_favorites():
-    """
-    Reads FAVORITES_FILE and prints each line.
-    Each printed line should be prefixed with "I like: ".
-    """
-    print("\n--- Reading Your Favorites ---")
-    # TODO 2: Open FAVORITES_FILE in 'read' mode ('r').
-    # Use a 'with' statement.
-    # Inside the 'with' block, loop through each line in the file.
-    # For each line, print "I like: " followed by the line (you might want to .strip() it).
     
+    print("\n--- Reading Your Favorites ---")
+    
+    with open(FAVORITES_FILE) as f:
+        for x in f:
+            print(f'I like: {x.strip()}')
 
-# --- Test your functions ---
 if __name__ == "__main__":
     favorite_items = ["Coding in Python", "Reading Sci-Fi Novels", "Hiking in the Mountains", "Drinking Coffee"]
     

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Laptop",
+    "category": "Electronics",
+    "price": 1200.0
+  },
+  {
+    "name": "Coffee Maker",
+    "category": "Appliances",
+    "price": 49.99
+  },
+  {
+    "name": "Book - Python Basics",
+    "category": "Books",
+    "price": 29.95
+  },
+  {
+    "name": "T-Shirt",
+    "category": "Apparel",
+    "price": 15.5
+  }
+]

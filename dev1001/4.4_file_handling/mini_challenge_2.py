@@ -3,3 +3,10 @@
 #
 # Hint: Use split(':') and check the length of the resulting list.
 
+with open ('shopping.txt') as f:
+    for line in f:
+        if ':' in line:
+            splitline=line.split(":")
+            print(f'Item: {splitline[0]}, Price: ${splitline[1].strip()}')
+
+
